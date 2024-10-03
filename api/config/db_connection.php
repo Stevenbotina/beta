@@ -10,21 +10,20 @@
     $dbName = 'beta';
     $port = '5432';
 
-    $data_connection = '
+    $data_connection = "
         host        =   $host
         port        =   $port
-        username    =   $username
+        user        =   $username
         password    =   $password
-        dbname      =   $dbName
-    ';
+        dbname      =   $dbName";
 
     $conn = pg_connect($data_connection);
 
     if (!$conn) {
         die("Connection failed: ". pg_last_error());
-    } else {
-        echo "Connected successfully";
+    //} else {
+    //    echo "Connected successfully";
     }
 
-    ph_close($conn);
+    //pg_close($conn);
 ?>
